@@ -78,7 +78,7 @@ section{padding:96px 0 10px;text-align:center}
 .hc em{font-style:normal;color:var(--acc);font-size:13px;margin:4px 0 6px}
 .hc p{color:var(--mut);font-size:14px;margin-bottom:14px}
 .vz{flex:1;width:100%;display:flex;flex-direction:column;justify-content:flex-end;gap:8px}
-.orb{font-size:30px;font-weight:800;line-height:1;color:var(--ink)}
+.orb{width:100px;height:100px;margin:14px auto 0;border-radius:50%;display:grid;place-items:center;font-size:28px;font-weight:800;line-height:1;color:var(--ink);background:radial-gradient(circle at 50% 38%,rgba(47,70,111,.95),rgba(15,34,58,.95) 72%);border:1px solid rgba(237,234,230,.28);box-shadow:0 0 44px rgba(47,70,111,.75),inset 0 1px 0 rgba(237,234,230,.18)}
 .rw{border:1px solid var(--line);border-radius:10px;padding:7px 12px;font-size:13px;text-align:start;color:var(--mut);background:var(--deep)}
 .rw.on{background:rgba(237,234,230,.14);border-color:rgba(237,234,230,.4);color:var(--acc)}
 .cd{direction:ltr;text-align:left;font-family:ui-monospace,Menlo,monospace;font-size:13px;color:var(--ink-subtle);border:1px solid var(--line);border-radius:10px;padding:12px;background:var(--deep)}
@@ -140,7 +140,7 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--acc);outline-offset
 .rv.vis{opacity:1;transform:none}
 
 @media(max-width:900px){.g5,.g3{grid-template-columns:1fr 1fr}.stats{grid-template-columns:1fr 1fr;row-gap:18px}.stats div:nth-child(3){border:0}}
-@media(max-width:760px){header .w{grid-template-columns:auto auto;justify-content:space-between;border-radius:28px;padding:10px 16px}nav{grid-column:1/-1;order:3;gap:16px;margin-top:6px}.gold-grid{grid-template-columns:repeat(2,1fr)}.hero{padding-top:64px}}
+@media(max-width:760px){header{padding:8px 12px 0}header .w{grid-template-columns:auto auto;justify-content:space-between;row-gap:2px;border-radius:22px;padding:7px 14px 8px}header img{height:28px}header .w>span .btn.s:not(.o){display:none}header .btn.s{padding:5px 14px;font-size:12px}nav{grid-column:1/-1;order:3;justify-self:stretch;gap:18px;margin:0;padding-top:6px;border-top:1px solid rgba(237,234,230,.1)}nav a{font-size:12.5px}.gold-grid{grid-template-columns:repeat(2,1fr)}.hero{padding-top:48px}}
 @media(max-width:560px){.g5,.g3{grid-template-columns:1fr}html{scroll-padding-top:130px}nav{gap:12px}nav a{font-size:12px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.rv{opacity:1;transform:none;transition:none}}
 </style>
