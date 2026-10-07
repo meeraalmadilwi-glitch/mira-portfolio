@@ -147,6 +147,24 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--acc);outline-offset
 @media(max-width:760px){header{padding:8px 12px 0}header .w{grid-template-columns:auto auto;justify-content:space-between;row-gap:2px;border-radius:22px;padding:7px 14px 8px}header img{height:28px}header .w>span .btn.s:not(.o){display:none}header .btn.s{padding:5px 14px;font-size:12px}nav{grid-column:1/-1;order:3;justify-self:stretch;gap:18px;margin:0;padding-top:6px;border-top:1px solid rgba(237,234,230,.1)}nav a{font-size:12.5px}.gold-grid{grid-template-columns:repeat(2,1fr)}.hero{padding-top:48px}}
 @media(max-width:560px){.g5,.g3{grid-template-columns:1fr}html{scroll-padding-top:130px}nav{gap:12px}nav a{font-size:12px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.rv{opacity:1;transform:none;transition:none}}
+
+/* floating assistant */
+.botbtn{position:fixed;left:20px;bottom:20px;z-index:45;border:0;border-radius:999px;padding:13px 26px;background:var(--acc);color:var(--acc-ink);font:inherit;font-weight:700;font-size:15px;cursor:pointer;box-shadow:0 16px 36px -14px rgba(0,0,0,.8),0 0 0 1px rgba(237,234,230,.3);transition:transform .2s ease}
+.botbtn:hover{transform:translateY(-2px)}
+.botbtn[hidden]{display:none}
+.bot{position:fixed;left:20px;bottom:20px;z-index:46;width:min(390px,calc(100vw - 32px));max-height:min(640px,calc(100vh - 40px));display:flex;flex-direction:column;padding:16px;border-radius:22px;background:rgba(15,34,58,.94);-webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px);border:1px solid rgba(237,234,230,.2);box-shadow:0 30px 70px -20px rgba(0,0,0,.85),inset 0 1px 0 rgba(237,234,230,.1);text-align:start}
+.bot[hidden]{display:none}
+.bot-h{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
+.bot-h .tag{margin-bottom:6px;font-size:12px;padding:2px 12px}
+.bot-h h2{font-size:18px;margin:0}
+#botx{border:1px solid var(--line);background:rgba(237,234,230,.06);color:var(--ink);font:inherit;font-size:13px;padding:6px 14px;border-radius:12px;cursor:pointer}
+#botx:hover{background:var(--acc);color:var(--acc-ink)}
+.bot .sub{margin:6px 0 10px;font-size:14px;text-align:start}
+.bot .c{background:none;border:0;box-shadow:none;padding:0;-webkit-backdrop-filter:none;backdrop-filter:none;max-width:none;display:flex;flex-direction:column;min-height:0;flex:1;overflow:visible}
+.bot .c:hover{transform:none;box-shadow:none;border-color:transparent}
+.bot .msgs{flex:1;min-height:140px;max-height:none;overflow:auto;margin-bottom:10px}
+.bot .qs{max-height:104px;overflow:auto}
+@media(max-width:560px){.botbtn{left:14px;bottom:14px}.bot{left:12px;bottom:12px;width:calc(100vw - 24px);max-height:calc(100vh - 24px)}}
 </style>
 </head>
 <body>
@@ -309,14 +327,6 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--acc);outline-offset
 </div>
 </section>
 
-<section id="ask">
-<span class="tag">المساعد الذكي</span><h2>اسأل عن ميرة</h2>
-<p class="sub">اختر سؤالاً أو اكتب سؤالك.</p>
-<div class="c chat"><div class="msgs" id="msgs" aria-live="polite"><div class="m b">أهلاً بك. اسألني عن ميرة أو مشاريعها أو شركة مخرج ومنتجها بصيرة أو طريقة التواصل معها.</div></div>
-<div class="qs" id="qs"></div>
-<div class="in"><input id="q" type="text" placeholder="اكتب سؤالك بالعربي أو English" aria-label="سؤالك"><button id="go" type="button">إرسال</button></div></div>
-</section>
-
 <section id="certs">
 <span class="tag">التدريب والبرامج</span><h2>الشهادات</h2>
 <div class="g" style="grid-template-columns:repeat(auto-fit,minmax(240px,1fr))">
@@ -327,6 +337,15 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--acc);outline-offset
 </div>
 </section>
 </main>
+
+<button id="botbtn" class="botbtn" type="button" aria-controls="bot" aria-expanded="false">اسألني</button>
+<aside id="bot" class="bot" hidden role="dialog" aria-label="المساعد الذكي">
+<div class="bot-h"><div><span class="tag">المساعد الذكي</span><h2>اسأل عن ميرة</h2></div><button id="botx" type="button">إغلاق</button></div>
+<p class="sub">اختر سؤالاً أو اكتب سؤالك.</p>
+<div class="c chat"><div class="msgs" id="msgs" aria-live="polite"><div class="m b">أهلاً بك. اسألني عن ميرة أو مشاريعها أو شركة مخرج ومنتجها بصيرة أو طريقة التواصل معها.</div></div>
+<div class="qs" id="qs"></div>
+<div class="in"><input id="q" type="text" placeholder="اكتب سؤالك بالعربي أو English" aria-label="سؤالك"><button id="go" type="button">إرسال</button></div></div>
+</aside>
 
 <div id="lb" hidden role="dialog" aria-modal="true" aria-label="عرض الشهادة"><button id="lx" type="button" aria-label="إغلاق">إغلاق</button><button id="lp" type="button" aria-label="السابقة">السابقة</button><button id="ln" type="button" aria-label="التالية">التالية</button><figure><img id="li" alt=""><figcaption id="lc"></figcaption></figure></div>
 
@@ -476,6 +495,17 @@ var live=true,t0=performance.now(),prev=t0;
 document.addEventListener("visibilitychange",function(){live=!document.hidden;prev=performance.now()});
 function frame(ms){if(live&&ms-prev>=28){var dt=Math.min(.1,(ms-prev)/1000);prev=ms;draw((ms-t0)/1000,dt)}if(!reduce)requestAnimationFrame(frame)}
 if(reduce)draw(3,0);else requestAnimationFrame(frame)
+})();
+</script>
+<script>
+/* assistant widget open/close */
+(function(){
+var p=document.getElementById("bot"),b=document.getElementById("botbtn"),x=document.getElementById("botx");
+function open(){p.hidden=false;b.hidden=true;b.setAttribute("aria-expanded","true");var i=document.getElementById("q");if(i)setTimeout(function(){i.focus()},50)}
+function shut(){p.hidden=true;b.hidden=false;b.setAttribute("aria-expanded","false");b.focus()}
+b.onclick=open;x.onclick=shut;
+document.addEventListener("keydown",function(e){if(e.key==="Escape"&&!p.hidden)shut()});
+Array.prototype.forEach.call(document.querySelectorAll('a[href="#ask"]'),function(a){a.addEventListener("click",function(e){e.preventDefault();open()})});
 })();
 </script>
 </body>
