@@ -149,8 +149,16 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--acc);outline-offset
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.rv{opacity:1;transform:none;transition:none}}
 
 /* floating assistant */
-.botbtn{position:fixed;left:20px;bottom:20px;z-index:45;border:0;border-radius:999px;padding:13px 26px;background:var(--acc);color:var(--acc-ink);font:inherit;font-weight:700;font-size:15px;cursor:pointer;box-shadow:0 16px 36px -14px rgba(0,0,0,.8),0 0 0 1px rgba(237,234,230,.3);transition:transform .2s ease}
-.botbtn:hover{transform:translateY(-2px)}
+.botbtn{position:fixed;left:18px;bottom:18px;z-index:45;width:78px;height:82px;padding:0;border:0;background:none;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.botbtn .rbt{width:100%;height:100%;display:block;overflow:visible;filter:drop-shadow(0 12px 16px rgba(0,0,0,.55)) drop-shadow(0 0 14px rgba(47,70,111,.9));animation:rfloat 3.6s ease-in-out infinite;transition:transform .25s ease}
+.botbtn:hover .rbt{transform:scale(1.1) rotate(-4deg);animation-play-state:paused}
+.botbtn:focus-visible{outline:3px solid var(--acc);outline-offset:4px;border-radius:24px}
+.rbt .eye{transform-box:fill-box;transform-origin:center;animation:rblink 5s infinite}
+.rbt .ant{animation:rpulse 1.8s ease-in-out infinite}
+@keyframes rfloat{50%{transform:translateY(-7px)}}
+@keyframes rblink{0%,91%,100%{transform:scaleY(1)}95%{transform:scaleY(.08)}}
+@keyframes rpulse{50%{opacity:.35}}
+@media(prefers-reduced-motion:reduce){.botbtn .rbt,.rbt .eye,.rbt .ant{animation:none}}
 .botbtn[hidden]{display:none}
 .bot{position:fixed;left:20px;bottom:20px;z-index:46;width:min(390px,calc(100vw - 32px));max-height:min(640px,calc(100vh - 40px));display:flex;flex-direction:column;padding:16px;border-radius:22px;background:rgba(15,34,58,.94);-webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px);border:1px solid rgba(237,234,230,.2);box-shadow:0 30px 70px -20px rgba(0,0,0,.85),inset 0 1px 0 rgba(237,234,230,.1);text-align:start}
 .bot[hidden]{display:none}
@@ -164,7 +172,7 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--acc);outline-offset
 .bot .c:hover{transform:none;box-shadow:none;border-color:transparent}
 .bot .msgs{flex:1;min-height:140px;max-height:none;overflow:auto;margin-bottom:10px}
 .bot .qs{max-height:104px;overflow:auto}
-@media(max-width:560px){.botbtn{left:14px;bottom:14px}.bot{left:12px;bottom:12px;width:calc(100vw - 24px);max-height:calc(100vh - 24px)}}
+@media(max-width:560px){.botbtn{left:10px;bottom:10px;width:66px;height:70px}.bot{left:12px;bottom:12px;width:calc(100vw - 24px);max-height:calc(100vh - 24px)}}
 </style>
 </head>
 <body>
@@ -338,7 +346,7 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--acc);outline-offset
 </section>
 </main>
 
-<button id="botbtn" class="botbtn" type="button" aria-controls="bot" aria-expanded="false">اسألني</button>
+<button id="botbtn" class="botbtn" type="button" aria-controls="bot" aria-expanded="false" aria-label="اسألني" title="اسألني"><svg class="rbt" viewBox="0 0 80 84" aria-hidden="true"><line x1="40" y1="7" x2="40" y2="17" stroke="#EDEAE6" stroke-width="3" stroke-linecap="round"/><circle class="ant" cx="40" cy="6" r="4" fill="#EDEAE6"/><rect x="4" y="32" width="8" height="18" rx="4" fill="#2F466F"/><rect x="68" y="32" width="8" height="18" rx="4" fill="#2F466F"/><rect x="11" y="17" width="58" height="46" rx="18" fill="#EDEAE6"/><rect x="19" y="26" width="42" height="28" rx="12" fill="#0F223A"/><ellipse class="eye" cx="31" cy="38" rx="4.6" ry="5.2" fill="#EDEAE6"/><ellipse class="eye" cx="49" cy="38" rx="4.6" ry="5.2" fill="#EDEAE6"/><path d="M33 47 Q40 52 47 47" fill="none" stroke="#EDEAE6" stroke-width="2.6" stroke-linecap="round"/><rect x="27" y="64" width="26" height="14" rx="7" fill="#2F466F"/><circle cx="40" cy="71" r="2.6" fill="#EDEAE6"/></svg></button>
 <aside id="bot" class="bot" hidden role="dialog" aria-label="المساعد الذكي">
 <div class="bot-h"><div><span class="tag">المساعد الذكي</span><h2>اسأل عن ميرة</h2></div><button id="botx" type="button">إغلاق</button></div>
 <p class="sub">اختر سؤالاً أو اكتب سؤالك.</p>
