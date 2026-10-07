@@ -14,7 +14,7 @@ SYS = (
     "FACTS: Mira Al Madilwi, IT graduate from Gulf College (2021-2026), GPA 4.00/4.00, from Seeb, Muscat, Oman. "
     "Makhraj Technical Solutions (مخرج للحلول التقنية) is the startup company she and two teammates are founding (not yet established, "
     "do not claim revenue, clients, funding, awards or team size beyond three). "
-    "Team: Mira Al Madilwi is CEO and project executive (also developed the Flutter app and web pages); "
+    "Team: Mira Al Madilwi is CEO and project executive responsible for sales and interfaces; "
     "Sara Al Harbi does AI and backend (multi-agent solution for financial analysis, inventory, pricing, auditing); "
     "Fawz Al Madilwi does UI/UX. "
     "Baseera is one of the company's products (no further details available). Makhraj services: Rasd (monitoring; no further details available), "
@@ -129,7 +129,7 @@ def smart_local_responder(question, history=None):
         if has("فريق", "اعضاء", "من معها", "مين مع", "ساره", "فوز", "team", "member", "founder", "partners"):
             if is_ar:
                 return "فريق بصيرة يتكون من 3 مؤسسين:\n• ميرة المديلوي: CEO والمدير التنفيذي للمشروع وتطوير التطبيقات والمواقع.\n• سارة الحربي: مسؤولة الذكاء الاصطناعي والباك إند والحل متعدد الوكلاء.\n• فوز المديلوي: مسؤولة تصميم الواجهات وتجربة المستخدم (UI/UX)."
-            return "The Baseera startup team consists of three members:\n• Mira Al Madilwi: CEO, Project Executive, and app/web developer.\n• Sara Al Harbi: AI & Backend specialist (multi-agent systems).\n• Fawz Al Madilwi: UI/UX designer."
+            return "The Baseera startup team consists of three members:\n• Mira Al Madilwi: CEO and Project Executive, responsible for sales and interfaces.\n• Sara Al Harbi: AI & Backend specialist (multi-agent systems).\n• Fawz Al Madilwi: UI/UX designer."
         if has("خدمات", "ماذا تقدم", "شو تسوي", "شو تقدم", "وش تقدم", "خدمه", "رصد", "واتساب", "تطبيقات", "services", "offer", "what does"):
             if is_ar:
                 return "بصيرة تقدم 3 خدمات رئيسية:\n1. رصد: خدمة مراقبة ومتابعة أداء المشاريع.\n2. بناء التطبيقات: تطوير تطبيقات الجوال والمواقع باستخدام Flutter وDjango.\n3. مساعد واتساب ذكي: مساعد تفاعلي ذكي لخدمة العملاء وأتمتة الردود."
