@@ -26,7 +26,7 @@ SYS = (
     "Training: IT department at Star Drone (website design with VS Code and Django); "
     "Bank Muscat Seeb branch (4 Aug-12 Sep 2024, customer service and banking app support); "
     "Galfar Engineering and Contracting IT department (9 Feb-6 Mar 2025, user support). "
-    "Skills: Flutter, Python, Java, Visual Basic, HTML, Django, data analysis, program analysis, Excel, "
+    "Skills: Python, Java, Visual Basic, HTML, Django, data analysis, program analysis, Excel, "
     "VS Code, problem solving, communication, presenting. "
     "Languages: Arabic native, English good. "
     "Certificates: IT and AI program by Rowad for Development and Training (45 hours, 5-9 July 2026); "
@@ -187,8 +187,8 @@ def smart_local_responder(question, history=None):
     # 9. Skills & Tech Stack / المهارات واللغات البرمجية
     if has("مهارات", "برمجه", "لغات", "لغه", "flutter", "python", "java", "django", "تقنيات", "excel", "skills", "languages", "programming", "tools"):
         if is_ar:
-            return "مهارات ميرة التقنية والبرمجية:\n• اللغات والأطر: Flutter, Python, Java, Django, Visual Basic, HTML.\n• الأدوات: VS Code, Excel, تحليل البيانات والنظم.\n• المهارات الشخصية: حل المشكلات، التواصل الفعّال، العرض والتقديم، وإدارة المشاريع (CEO)."
-        return "Mira's technical and soft skills:\n• Languages & Frameworks: Flutter, Python, Java, Django, Visual Basic, HTML.\n• Tools: VS Code, Microsoft Excel, Data & Systems Analysis.\n• Soft Skills: Problem solving, effective communication, presenting, and project leadership (CEO)."
+            return "مهارات ميرة التقنية والبرمجية:\n• اللغات والأطر: Python, Java, Django, Visual Basic, HTML.\n• الأدوات: VS Code, Excel, تحليل البيانات والنظم.\n• المهارات الشخصية: حل المشكلات، التواصل الفعّال، العرض والتقديم، وإدارة المشاريع (CEO)."
+        return "Mira's technical and soft skills:\n• Languages & Frameworks: Python, Java, Django, Visual Basic, HTML.\n• Tools: VS Code, Microsoft Excel, Data & Systems Analysis.\n• Soft Skills: Problem solving, effective communication, presenting, and project leadership (CEO)."
 
     # 10. Certificates / الشهادات والدورات
     if has("شهاده", "شهادات", "دورات", "رواد", "ندوه", "certificates", "courses", "certification"):
