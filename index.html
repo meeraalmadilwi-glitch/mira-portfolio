@@ -171,6 +171,30 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--acc);outline-offset
 .bot .msgs{flex:1;min-height:140px;max-height:none;overflow:auto;margin-bottom:10px}
 .bot .qs{max-height:104px;overflow:auto}
 @media(max-width:560px){.botbtn{left:10px;bottom:10px;width:64px;height:58px}.bot{left:12px;bottom:12px;width:calc(100vw - 24px);max-height:calc(100vh - 24px)}}
+
+/* elegant bot refinement */
+.botbtn{width:66px;height:66px;border-radius:50%}
+.botbtn::before{content:"";position:absolute;inset:0;border-radius:50%;box-shadow:0 0 0 0 rgba(237,234,230,.32);animation:rring 3.4s ease-out infinite;pointer-events:none}
+.botbtn .rbt{filter:drop-shadow(0 14px 20px rgba(0,0,0,.55)) drop-shadow(0 0 12px rgba(76,111,166,.55));animation:rfloat 4.2s ease-in-out infinite}
+.botbtn:hover .rbt{transform:scale(1.08) rotate(0deg)}
+.rbt .dot{animation:rdot 2.4s ease-in-out infinite}
+@keyframes rring{0%{box-shadow:0 0 0 0 rgba(237,234,230,.32)}70%,100%{box-shadow:0 0 0 20px rgba(237,234,230,0)}}
+@keyframes rdot{50%{opacity:.4}}
+@media(max-width:560px){.botbtn{width:58px;height:58px}}
+@media(prefers-reduced-motion:reduce){.botbtn::before,.rbt .dot{animation:none}}
+.bot{border-radius:26px;background:linear-gradient(180deg,rgba(24,46,76,.96),rgba(15,34,58,.97));border-color:rgba(237,234,230,.16);padding:18px}
+.bot *{scrollbar-width:thin;scrollbar-color:rgba(237,234,230,.25) transparent}
+.bot-h{padding-bottom:12px;border-bottom:1px solid rgba(237,234,230,.1);margin-bottom:2px}
+.bot-h h2{font-size:17px;letter-spacing:.01em}
+.bot .sub{margin:10px 0 12px;font-size:13.5px}
+.bot .m{font-size:14.5px;line-height:1.7;padding:10px 15px;border-radius:18px}
+.bot .m.b{background:rgba(237,234,230,.07);border:1px solid rgba(237,234,230,.1);border-end-start-radius:6px}
+.bot .m.u{border-end-end-radius:6px}
+.bot .qs button{font-size:13px;padding:6px 14px;background:rgba(237,234,230,.04)}
+.bot .in{margin-top:12px;padding:5px;border:1px solid rgba(237,234,230,.14);border-radius:999px;background:rgba(237,234,230,.05)}
+.bot .in input{border:0;background:none;padding:9px 14px}
+.bot .in input:focus{outline:none;border:0}
+.bot .in button{padding:0 22px}
 </style>
 </head>
 <body>
@@ -344,7 +368,7 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--acc);outline-offset
 </section>
 </main>
 
-<button id="botbtn" class="botbtn" type="button" aria-controls="bot" aria-expanded="false" aria-label="اسألني" title="اسألني"><svg class="rbt" viewBox="0 0 80 72" aria-hidden="true"><rect x="4" y="4" width="72" height="64" rx="26" fill="#EDEAE6"/><rect x="13" y="14" width="54" height="44" rx="19" fill="#0F223A"/><ellipse class="eye" cx="30" cy="33" rx="5.2" ry="6" fill="#EDEAE6"/><ellipse class="eye" cx="50" cy="33" rx="5.2" ry="6" fill="#EDEAE6"/><path d="M31 45 Q40 52.5 49 45" fill="none" stroke="#EDEAE6" stroke-width="3" stroke-linecap="round"/></svg></button>
+<button id="botbtn" class="botbtn" type="button" aria-controls="bot" aria-expanded="false" aria-label="اسألني" title="اسألني"><svg class="rbt" viewBox="0 0 72 72" aria-hidden="true"><defs><radialGradient id="rbg" cx="34%" cy="26%" r="85%"><stop offset="0" stop-color="#4C6FA6"/><stop offset=".45" stop-color="#2F466F"/><stop offset="1" stop-color="#0F223A"/></radialGradient><linearGradient id="rsh" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#EDEAE6" stop-opacity=".28"/><stop offset="1" stop-color="#EDEAE6" stop-opacity="0"/></linearGradient></defs><circle cx="36" cy="36" r="33" fill="url(#rbg)" stroke="#EDEAE6" stroke-opacity=".38" stroke-width="1.2"/><path d="M10 30 Q36 -2 62 30 Q36 14 10 30Z" fill="url(#rsh)"/><rect class="eye" x="23.5" y="28" width="5.6" height="13" rx="2.8" fill="#EDEAE6"/><rect class="eye" x="42.9" y="28" width="5.6" height="13" rx="2.8" fill="#EDEAE6"/><path d="M28.5 48 Q36 53.5 43.5 48" fill="none" stroke="#EDEAE6" stroke-opacity=".9" stroke-width="2" stroke-linecap="round"/><circle class="dot" cx="58" cy="13" r="4.6" fill="#EDEAE6" stroke="#0F223A" stroke-width="2.2"/></svg></button>
 <aside id="bot" class="bot" hidden role="dialog" aria-label="المساعد الذكي">
 <div class="bot-h"><div><span class="tag">المساعد الذكي</span><h2>اسأل عن ميرة</h2></div><button id="botx" type="button">إغلاق</button></div>
 <p class="sub">اختر سؤالاً أو اكتب سؤالك.</p>
