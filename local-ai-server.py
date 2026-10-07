@@ -14,7 +14,7 @@ SYS = (
     "FACTS: Mira Al Madilwi, IT graduate from Gulf College (2021-2026), GPA 4.00/4.00, from Seeb, Muscat, Oman. "
     "Makhraj Technical Solutions (مخرج للحلول التقنية) is the startup company she and two teammates are founding (not yet established, "
     "do not claim revenue, clients, funding, awards or team size beyond three). "
-    "Team: Mira Al Madilwi is CIO and project executive (also developed the Flutter app and web pages); "
+    "Team: Mira Al Madilwi is CEO and project executive (also developed the Flutter app and web pages); "
     "Sara Al Harbi does AI and backend (multi-agent solution for financial analysis, inventory, pricing, auditing); "
     "Fawz Al Madilwi does UI/UX. "
     "Baseera is one of the company's products (no further details available). Makhraj services: Rasd (monitoring; no further details available), "
@@ -98,9 +98,9 @@ def smart_local_responder(question, history=None):
 
     # 2. Who is Mira / About / من هي ميرة
     if has("من هي ميره", "منو ميره", "عرفني", "نبذه عن", "من ميره", "مين ميره", "من تكون", "سيرتها"):
-        return "ميرة المديلوي متخصصة تقنية معلومات من سلطنة عُمان (السيب، مسقط)، خريجة كلية الخليج بمعدل كامل 4.00 من 4.00. هي الـ CIO والمؤسس المشارك في شركة بصيرة الناشئة، ولديها خبرة في تطوير التطبيقات وتحليل البيانات وتصميم الحلول التقنية."
+        return "ميرة المديلوي متخصصة تقنية معلومات من سلطنة عُمان (السيب، مسقط)، خريجة كلية الخليج بمعدل كامل 4.00 من 4.00. هي الـ CEO والمؤسس المشارك في شركة بصيرة الناشئة، ولديها خبرة في تطوير التطبيقات وتحليل البيانات وتصميم الحلول التقنية."
     if has("who is mira", "about mira", "tell me about mira", "introduce mira", "bio"):
-        return "Mira Al Madilwi is an IT professional from Seeb, Muscat, Oman, graduated with a perfect GPA of 4.00/4.00 from Gulf College. She is the CIO and co-founder of the startup Baseera, specializing in application development, data analysis, and tech solutions."
+        return "Mira Al Madilwi is an IT professional from Seeb, Muscat, Oman, graduated with a perfect GPA of 4.00/4.00 from Gulf College. She is the CEO and co-founder of the startup Baseera, specializing in application development, data analysis, and tech solutions."
 
     # 3. GPA & Education / المعدل والجامعة والتعليم
     if has("معدل", "gpa", "تقدير", "علامات", "درجات", "امتياز"):
@@ -128,8 +128,8 @@ def smart_local_responder(question, history=None):
     if has("بصيره", "baseera"):
         if has("فريق", "اعضاء", "من معها", "مين مع", "ساره", "فوز", "team", "member", "founder", "partners"):
             if is_ar:
-                return "فريق بصيرة يتكون من 3 مؤسسين:\n• ميرة المديلوي: CIO والمدير التنفيذي للمشروع وتطوير التطبيقات والمواقع.\n• سارة الحربي: مسؤولة الذكاء الاصطناعي والباك إند والحل متعدد الوكلاء.\n• فوز المديلوي: مسؤولة تصميم الواجهات وتجربة المستخدم (UI/UX)."
-            return "The Baseera startup team consists of three members:\n• Mira Al Madilwi: CIO, Project Executive, and app/web developer.\n• Sara Al Harbi: AI & Backend specialist (multi-agent systems).\n• Fawz Al Madilwi: UI/UX designer."
+                return "فريق بصيرة يتكون من 3 مؤسسين:\n• ميرة المديلوي: CEO والمدير التنفيذي للمشروع وتطوير التطبيقات والمواقع.\n• سارة الحربي: مسؤولة الذكاء الاصطناعي والباك إند والحل متعدد الوكلاء.\n• فوز المديلوي: مسؤولة تصميم الواجهات وتجربة المستخدم (UI/UX)."
+            return "The Baseera startup team consists of three members:\n• Mira Al Madilwi: CEO, Project Executive, and app/web developer.\n• Sara Al Harbi: AI & Backend specialist (multi-agent systems).\n• Fawz Al Madilwi: UI/UX designer."
         if has("خدمات", "ماذا تقدم", "شو تسوي", "شو تقدم", "وش تقدم", "خدمه", "رصد", "واتساب", "تطبيقات", "services", "offer", "what does"):
             if is_ar:
                 return "بصيرة تقدم 3 خدمات رئيسية:\n1. رصد: خدمة مراقبة ومتابعة أداء المشاريع.\n2. بناء التطبيقات: تطوير تطبيقات الجوال والمواقع باستخدام Flutter وDjango.\n3. مساعد واتساب ذكي: مساعد تفاعلي ذكي لخدمة العملاء وأتمتة الردود."
@@ -187,8 +187,8 @@ def smart_local_responder(question, history=None):
     # 9. Skills & Tech Stack / المهارات واللغات البرمجية
     if has("مهارات", "برمجه", "لغات", "لغه", "flutter", "python", "java", "django", "تقنيات", "excel", "skills", "languages", "programming", "tools"):
         if is_ar:
-            return "مهارات ميرة التقنية والبرمجية:\n• اللغات والأطر: Flutter, Python, Java, Django, Visual Basic, HTML.\n• الأدوات: VS Code, Excel, تحليل البيانات والنظم.\n• المهارات الشخصية: حل المشكلات، التواصل الفعّال، العرض والتقديم، وإدارة المشاريع (CIO)."
-        return "Mira's technical and soft skills:\n• Languages & Frameworks: Flutter, Python, Java, Django, Visual Basic, HTML.\n• Tools: VS Code, Microsoft Excel, Data & Systems Analysis.\n• Soft Skills: Problem solving, effective communication, presenting, and project leadership (CIO)."
+            return "مهارات ميرة التقنية والبرمجية:\n• اللغات والأطر: Flutter, Python, Java, Django, Visual Basic, HTML.\n• الأدوات: VS Code, Excel, تحليل البيانات والنظم.\n• المهارات الشخصية: حل المشكلات، التواصل الفعّال، العرض والتقديم، وإدارة المشاريع (CEO)."
+        return "Mira's technical and soft skills:\n• Languages & Frameworks: Flutter, Python, Java, Django, Visual Basic, HTML.\n• Tools: VS Code, Microsoft Excel, Data & Systems Analysis.\n• Soft Skills: Problem solving, effective communication, presenting, and project leadership (CEO)."
 
     # 10. Certificates / الشهادات والدورات
     if has("شهاده", "شهادات", "دورات", "رواد", "ندوه", "certificates", "courses", "certification"):
@@ -220,8 +220,8 @@ def smart_local_responder(question, history=None):
 
     # 14. Fallback / إجابة عامة سياقية
     if is_ar:
-        return "ميرة خريجة تقنية معلومات بمعدل 4.00 من كلية الخليج، والـ CIO في شركة بصيرة الناشئة، وتعمل في تطوير التطبيقات وتحليل البيانات. للاستفسارات الخاصة أو المشاريع يمكنك التواصل معها مباشرة على meeraalmadilwi@gmail.com أو هاتفياً +968 9932 3445."
-    return "Mira is an IT graduate with a 4.00 GPA from Gulf College and CIO at Baseera startup, specializing in app development and data analysis. For custom inquiries or projects, you can reach her directly at meeraalmadilwi@gmail.com or +968 9932 3445."
+        return "ميرة خريجة تقنية معلومات بمعدل 4.00 من كلية الخليج، والـ CEO في شركة بصيرة الناشئة، وتعمل في تطوير التطبيقات وتحليل البيانات. للاستفسارات الخاصة أو المشاريع يمكنك التواصل معها مباشرة على meeraalmadilwi@gmail.com أو هاتفياً +968 9932 3445."
+    return "Mira is an IT graduate with a 4.00 GPA from Gulf College and CEO at Baseera startup, specializing in app development and data analysis. For custom inquiries or projects, you can reach her directly at meeraalmadilwi@gmail.com or +968 9932 3445."
 
 
 class Handler(BaseHTTPRequestHandler):
